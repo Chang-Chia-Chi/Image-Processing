@@ -1,3 +1,7 @@
+Optional programming exercises of week 1, built by myself without using 3rd party libs.
+(except for im.read and im.show)
+
+
 1. Grey Level
 
 
