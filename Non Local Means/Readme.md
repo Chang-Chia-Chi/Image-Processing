@@ -4,7 +4,7 @@
 局部平均("Local Means")的演算方法，以捲積(convolution)的概念，利用特定權重的"核"(kernel)，<br>
 將影像中像素點的灰階，與鄰近的像素點平均，而達到降低噪音的目的。
 
-Guassian filter 對於周圍像素點接近時的濾波效果非常好，但其近似熱流(heat flow)的性質，在灰階值有明顯<br>
+Guassian filter 對點周圍像素值接近時的濾波效果非常好，但其近似熱流(heat flow)的性質，在灰階值有明顯<br>
 躍遷的區塊，因灰階值"朝周圍擴散"而導致邊緣有模糊(blurring)的狀況，大大降低甚至消除某些細節與紋理，<br>
 為了改善區域算法造成的影像模糊，2005年由A. Buades, B. Coll, J.M. Morel等人提出了一種基於全域的權重<br>
 平均方法，稱為Non Local Means [1]。
