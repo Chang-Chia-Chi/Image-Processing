@@ -18,13 +18,22 @@ Guassian filter 對於周圍像素點接近時的濾波效果非常好，但其�
 上式的概念可理解成，經過降噪後的值，為整張圖片上所有點的加權平均，其中每個點的權重為 p 附近區塊與<br>
 q 附近區塊的相似度，利用向量化概念計算歐基里德距離，再透過指數衰減函數，使得權重落在 [0,1] 的區間，<br>
 當圖塊越相似，權重就越高。<br><br>
-相比局部平均法，NLM利用比較全圖像素間的差異取權重平均，利用週期性出現的特徵如背景、紋理及邊緣等進行降躁，<br>
-可以較佳的保留圖片細節，但由於對每個點都要搜尋整張圖片計算權重，其運算的複雜度比之局部平均要高上許多。
+相比局部平均法，NLM利用比較全圖像素間的差異取權重平均，利用週期性出現的特徵如背景、紋理及邊緣等<br>
+進行降躁，可以較佳的保留圖片細節，但由於對每個點都要搜尋整張圖片計算權重，其運算的複雜度比之局部<br>
+平均要高上許多。
 
 ## 3.NLM實作
-
-
+現考慮一彩色圖片 u = (u1,u2,u3)，圖片上 p 點降躁後的值可寫為<br>
+![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Non%20Local%20Means/pic/Pixel%20wise.jpg)<br>
+其中 i = 1,2,3 (RGB三通道)， w(p,q) 為權重， d^2 為歐基里德距離， B(p,f)表以 p 為中心寬度為 2f+1 的正方形，<br>
+區域即 [px-f,px+f]X[py-f,py+f]區間。<br><br>
+![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Non%20Local%20Means/pic/Distance.jpg)<br>
+![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Non%20Local%20Means/pic/Weight.jpg)<br><br>
+上式 σ 為噪音的標準差， h 為衰減函式參數，皆是濾波器的相關參數。可以解釋為當圖塊近似程度較高時 (d<=2σ) ，<br>
+權重為1； (d>2σ) 當近似程度較低時，權重以指數函式快速的衰減。 h 則是權重計算平坦程度的參數， h 值越小，<br>
+代表衰減速度越快，相似程度低的區塊權重將更快遞減至0。
 
 ## 參考文獻:
 1. A. Buades, B. Coll, J.M. Morel, “A non local algorithm for image denoising”, IEEE Computer
 Vision and Pattern Recognition 2005, Vol 2, pp: 60-65, 2005.
+2. Wikipedia, https://en.wikipedia.org/wiki/Non-local_means
