@@ -15,8 +15,8 @@ forward mapping算法直觀易懂，非常容易使用，但一般卻不會直�
 
 ## 3. Inverse Mapping
 基於以上理由，實作上大多使用 inverse mapping 方法，概念與forward mapping類似，但變成以目標像素點，計算來源像素點<br>
-的位置。若計算結果超出來源圖範圍，則以 0 、 255 或任何你想要的值帶入；若結果落入原圖範圍，則利用內插來源像素點的灰階，<br>
-求出目標像素點的灰階值。<br>
+的位置。若計算結果超出來源圖範圍，則以 0 、 255 或任何你想要的值帶入；若結果落入原圖範圍，則利用內插來源像素點的<br>
+灰階，求出目標像素點的灰階值。<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Rotation/pic/concept%20of%20inverse%20mapping.jpg)<br>
 
 inverse mapping的計算步驟如下:<br>
