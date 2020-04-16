@@ -41,7 +41,7 @@ q 附近區塊的相似度，利用向量化概念計算歐基里德距離，再
 為了降低NLM的計算需求，該論文[1]同時提出了區塊級實作的概念，如下表示<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Non%20Local%20Means/pic/patch%20wise.jpg)<br>
 權重 w 的算法與前節相同， B(p,r) 則以半徑r限制了搜索區域，最後將 Bm(i,f)的值以下式平均後，即可<br>
-求得降躁後的圖像<br>
+求得降噪後的圖像<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Non%20Local%20Means/pic/patcj%20wise%20result.jpg)<br>
 若影像大小為 M X M，搜尋視窗為 21X21 ，區塊大小為 7X7 ，整個算法的複雜度為 49 X 441 X M^2，<br>
 大幅降低所需運算時間，另外因為最後總和平均的步驟，區塊級有較高的峰值信躁比 PSNR ，邊緣的噪音<br>
