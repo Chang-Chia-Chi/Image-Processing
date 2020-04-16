@@ -9,7 +9,7 @@
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Rotation/pic/forwad%20mapping.jpg)<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Rotation/pic/concept%20of%20forwad%20mapping.jpg)<br>
 
-forward mapping算法直觀易懂，非常容易使用，但一般卻不會直接套用，原因如下：<br><br>
+forward mapping算法直觀易懂，非常容易使用，但一般卻不會直接套用，原因如下：<br>
 1. 有可能不同的來源像素點 mapping 到相同的目標像素點位置，如何計算灰階值是個問題。<br>
 2. 有可能某些目標像素點根本沒有被 mapping到。<br>
 
