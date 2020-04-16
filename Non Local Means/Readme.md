@@ -44,9 +44,9 @@ q 附近區塊的相似度，利用向量化概念計算歐基里德距離，再
 權重 w 的算法與前節相同， B(p,r) 則以半徑r限制了搜索區域，最後將 Bm(i,f)的值以下式平均後，即可<br>
 求得降躁後的圖像<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Non%20Local%20Means/pic/patcj%20wise%20result.jpg)<br>
-若影像大小為 M X M，搜尋視窗為 21X21 ，區塊大小為 7X7 ，整個算法的複雜度為 49*441*M^2，大幅降低<br>
-所需運算時間，另外因為最後總和平均的步驟，區塊級有較高的峰值信躁比 PSNR ，邊緣的噪音震盪也跟著<br>
-下降，但在細節保存上，兩種算法無明顯的優劣。
+若影像大小為 M X M，搜尋視窗為 21X21 ，區塊大小為 7X7 ，整個算法的複雜度為 49 X 441 X M^2，<br>
+大幅降低所需運算時間，另外因為最後總和平均的步驟，區塊級有較高的峰值信躁比 PSNR ，邊緣的噪音<br>
+震盪也跟著下降，但在細節保存上，兩種算法無明顯的優劣。
 
 ## 參考文獻:
 1. A. Buades, B. Coll, J.M. Morel, “A non local algorithm for image denoising”, IEEE Computer
