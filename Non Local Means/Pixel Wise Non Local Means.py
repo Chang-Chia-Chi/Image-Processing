@@ -6,7 +6,6 @@ path = "C:/Users/USER/Desktop/Python/影像處理/練習/White Noise Lena.jpg"
 image = plt.imread(path)
 img = image.copy()
 f = 7 #window size of simlular area
-r = 21 #window size of search area
 h = 8 #degree of filting
 variance = 20 #variance of noise in image
 
