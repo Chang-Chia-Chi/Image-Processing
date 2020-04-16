@@ -36,7 +36,7 @@ q 附近區塊的相似度，利用向量化概念計算歐基里德距離，再
 ## 4.NLM 區塊級實作(Patchwise Implementation)
 像素級實作需對整張影像進行搜索，考慮影像大小為 N X N，實作上複雜度為 N^4 ，隨影像解析度的提高，<br>
 運行時間將大幅拉長。下圖 (256 X 256) 為以像素級實作的案例，降躁的效果非常顯著，然運算複雜度實在太<br>
-高，即便計算了一個晚上(約 8 小時)也只完成一半，效率上難以使用。<br>
+高，即便計算了一個晚上(colab環境約 8 小時)也只完成一半，效率上難以使用。<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Non%20Local%20Means/pic/pixel%20base.jpg)<br>
 為了降低NLM的計算需求，該論文[1]同時提出了區塊級實作的概念，如下表示<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Non%20Local%20Means/pic/patch%20wise.jpg)<br>
@@ -45,8 +45,10 @@ q 附近區塊的相似度，利用向量化概念計算歐基里德距離，再
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Non%20Local%20Means/pic/patcj%20wise%20result.jpg)<br>
 若影像大小為 M X M，搜尋視窗為 21X21 ，區塊大小為 7X7 ，整個算法的複雜度為 49 X 441 X M^2，<br>
 大幅降低所需運算時間，另外因為最後總和平均的步驟，區塊級有較高的峰值信躁比 PSNR ，邊緣的噪音<br>
-震盪也跟著下降，但在細節保存上，兩種算法無明顯的優劣。
+震盪也跟著下降，但在細節保存上，兩種算法無明顯的優劣。<br>
 
+區塊級實作的結果可參考下圖，colab環境執行約210s (區塊大小 7X7)，效率大大提升，且濾波效果良好
+![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Non%20Local%20Means/pic/patch%20base.jpg)
 ## 參考文獻:
 1. A. Buades, B. Coll, J.M. Morel, “A non local algorithm for image denoising”, IEEE Computer
 Vision and Pattern Recognition 2005, Vol 2, pp: 60-65, 2005.
