@@ -67,7 +67,7 @@ for k in range(ix):
             Cp += weight
             wuj += weight*Bq
     Bi = wuj/Cp
-    NLu[k,m,:] = Bi.sum()/(f**2)
+    NLu[k,m,:] = Bi.sum(axis = (0,1))/(f**2)
 
 NLu = np.rint(NLu)
 plt.imshow(NLu)
