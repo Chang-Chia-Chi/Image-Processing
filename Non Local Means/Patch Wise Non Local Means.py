@@ -2,7 +2,7 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 
-path = "C:/Users/USER/Desktop/Python/影像處理/練習/practice pic2.jpg"
+path = "C:/Users/USER/Desktop/Python/Image Processing/practice/fang.jpg"
 image = plt.imread(path)
 img = image.copy()
 
@@ -14,20 +14,16 @@ def NLM(img, f = 5, s = 21, variance = 20, h = 8):
     variance is variance of noise
     h is degree of filtering
     """
-    f = 5 #window size of simular area
     f_r = f//2 #radius of simular area
-    s = 21 #window size of search area
     s_r = s//2 #radius of search area
-    h = 8 #degree of filtering
-    variance = 20 #variance of noise in image
 
     def eu_distance(Bi,Bj):
         """
         calculate Euclidean distance between two image region
         Bi & Bj is two image areas in same array size
         """
-        f = np.shape(Bi)[0]
-        eu_dis = ((Bi - Bj)**2).sum()/(3*(f**2))
+        N = np.shape(Bi)[0]
+        eu_dis = ((Bi - Bj)**2).sum()/(3*(N**2))
         return eu_dis
 
     def weight_func(eu_dis,varian,h):
