@@ -48,7 +48,7 @@ q 附近區塊的相似度，利用向量化概念計算歐基里德距離，再
 震盪也跟著下降，但在細節保存上，兩種算法無明顯的優劣。<br>
 
 區塊級實作的結果可參考下圖，colab環境執行約270s，效率大大提升，且濾波效果良好
-![https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Non%20Local%20Means/pic/patch%20base.jpg)
+![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Non%20Local%20Means/pic/patch%20base.jpg)
 ## 參考文獻:
 1. A. Buades, B. Coll, J.M. Morel, “A non local algorithm for image denoising”, IEEE Computer
 Vision and Pattern Recognition 2005, Vol 2, pp: 60-65, 2005.
