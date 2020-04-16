@@ -14,19 +14,19 @@ forward mapping算法直觀易懂，非常容易使用，但一般卻不會直�
 2. 有可能某些目標像素點根本沒有被 mapping到。<br>
 
 ## 3. Inverse Mapping
-基於以上理由，實作上大多使用 inverse mapping 方法，概念與forward mapping類似，但變成以目標像素點，計算來源像素點<br>
-的位置。若計算結果超出來源圖範圍，則以 0 、 255 或任何你想要的值帶入；若結果落入原圖範圍，則利用內插來源像素點的<br>
-灰階，求出目標像素點的灰階值。<br>
+基於以上理由，實作上大多使用 inverse mapping 方法，概念與forward mapping類似，但變成以目標像素點，計算來源<br>
+像素點的位置。若計算結果超出來源圖範圍，則以 0 、 255 或任何你想要的值帶入；若結果落入原圖範圍，則利用來源像素點<br>
+的內插，求出目標像素點的灰階值。<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Rotation/pic/concept%20of%20inverse%20mapping.jpg)<br>
 
 inverse mapping的計算步驟如下:<br>
 1. 以 forward mapping 計算圖片旋轉後的尺寸，並以該尺寸創建空矩陣。<br>
-2. 以 inverse mapping 計算每個目標像素點對應的來源像素點。這邊有一個重點，因旋轉矩陣是對"原點"旋轉，若沒有調<br>
-整目標圖片座標，得到的結果將有部分超出影像範圍，所以在計算 inverse mapping 時，需位移至目標圖片的原點再做旋轉<br>
+2. 以 inverse mapping 計算每個目標像素點對應的來源像素點。請特別注意，因旋轉矩陣是對"原點"旋轉，若沒有調<br>
+整目標圖片座標，得到的結果部分將超出影像範圍，所以在計算時，需位移至目標圖片的原點，再做 inverse mapping <br>
 可參考下圖。<br>
-3. 若 inverse mapping 的座標點坐落於原圖尺寸外，目標像素點代入你所希望的灰階值；；若結果落入原圖範圍，則利用<br>
+3. 若 inverse mapping 的座標點坐落於原圖尺寸外，目標像素點代入你所希望的灰階值；若結果落入原圖範圍，則利用<br>
 特定的內插方法，計算目標像素點的灰階。<br>
-4. 輸出旋轉後影像<br>
+4. 掃完所有目標像素點後，即可輸出旋轉後影像。<br>
 
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Rotation/pic/rotate%20about%20old%20original.jpg)
 
