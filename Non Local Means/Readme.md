@@ -5,7 +5,7 @@
 將影像中像素點的灰階，與鄰近的像素點平均，而達到降低噪音的目的。
 
 Guassian filter 對點周圍像素值接近時的濾波效果非常好，但其近似熱流(heat flow)的性質，在灰階值有明顯<br>
-躍遷的區塊，因灰階值"朝周圍擴散"而導致邊緣有模糊(blurring)的狀況，大大降低甚至消除某些細節與紋理，<br>
+躍遷的區塊，因灰階值"朝周圍擴散"而導致邊緣發生模糊(blurring)的狀況，大大降低甚至消除某些細節與紋理，<br>
 為了改善區域算法造成的影像模糊，2005年由A. Buades, B. Coll, J.M. Morel等人提出了一種基於全域的權重<br>
 平均方法，稱為Non Local Means [1]。
 
@@ -36,17 +36,16 @@ q 附近區塊的相似度，利用向量化概念計算歐基里德距離，再
 ## 4.NLM 區塊級實作(Patchwise Implementation)
 像素級實作需對整張影像進行搜索，考慮影像大小為 N X N，實作上複雜度為 N^4 ，隨影像解析度的提高，<br>
 運行時間將大幅拉長。下圖 (256 X 256) 為以像素級實作的案例，降躁的效果非常顯著，然運算複雜度實在太<br>
-高，即便計算了一個晚上(約 8 小時)只完成一半，效率上難以使用。<br>
+高，即便計算了一個晚上(約 8 小時)也只完成一半，效率上難以使用。<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Non%20Local%20Means/pic/pixel%20base.jpg)<br>
-為了降低NLM的計算需求，該論文[1]同時提出了區塊級實作的概念，針對某區塊 B(p,f) 降躁後的影像，<br>
-可如下表示<br>
+為了降低NLM的計算需求，該論文[1]同時提出了區塊級實作的概念，如下表示<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Non%20Local%20Means/pic/patch%20wise.jpg)<br>
 權重 w 的算法與前節相同， B(p,r) 則以半徑r限制了搜索區域，最後將 Bm(i,f)的值以下式平均後，即可<br>
 求得降躁後的圖像<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Non%20Local%20Means/pic/patcj%20wise%20result.jpg)<br>
-若影像大小為 M X M，搜尋視窗為 21X21 ，區塊大小為 7X7 ，整個算法的複雜度為 49*441*M^2，大幅降低<br>
-所需運算時間，另外因為最後總和平均的步驟，區塊級有較高的峰值信躁比 PSNR ，邊緣的噪音震盪也跟著<br>
-下降，但在細節保存上，兩種算法無明顯的優劣。
+若影像大小為 M X M，搜尋視窗為 21X21 ，區塊大小為 7X7 ，整個算法的複雜度為 49 X 441 X M^2，<br>
+大幅降低所需運算時間，另外因為最後總和平均的步驟，區塊級有較高的峰值信躁比 PSNR ，邊緣的噪音<br>
+震盪也跟著下降，但在細節保存上，兩種算法無明顯的優劣。
 
 ## 參考文獻:
 1. A. Buades, B. Coll, J.M. Morel, “A non local algorithm for image denoising”, IEEE Computer
