@@ -38,8 +38,7 @@ q 附近區塊的相似度，利用向量化概念計算歐基里德距離，再
 運行時間將大幅拉長。下圖 (256 X 256) 為以像素級實作的案例，降躁的效果非常顯著，然運算複雜度實在太<br>
 高，即便計算了一個晚上(約 8 小時)也只完成一半，效率上難以使用。<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Non%20Local%20Means/pic/pixel%20base.jpg)<br>
-為了降低NLM的計算需求，該論文[1]同時提出了區塊級實作的概念，針對某區塊 B(p,f) 降躁後的影像，<br>
-可如下表示<br>
+為了降低NLM的計算需求，該論文[1]同時提出了區塊級實作的概念，如下表示<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Non%20Local%20Means/pic/patch%20wise.jpg)<br>
 權重 w 的算法與前節相同， B(p,r) 則以半徑r限制了搜索區域，最後將 Bm(i,f)的值以下式平均後，即可<br>
 求得降躁後的圖像<br>
