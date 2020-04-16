@@ -37,7 +37,7 @@ q 附近區塊的相似度，利用向量化概念計算歐基里德距離，再
 像素級實作需對整張影像進行搜索，考慮影像大小為 N X N，實作上複雜度為 N^4 ，隨影像解析度的提高，<br>
 運行時間將大幅拉長。下圖 (256 X 256) 為以像素級實作的案例，降躁的效果非常顯著，然運算複雜度實在太<br>
 高，即便計算了一個晚上(colab環境約 8 小時)也只完成一半，效率上難以使用。<br>
-![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Non%20Local%20Means/pic/pixel%20base.jpg)<br>
+![image]()<br>
 為了降低NLM的計算需求，該論文[1]同時提出了區塊級實作的概念，如下表示<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Non%20Local%20Means/pic/patch%20wise.jpg)<br>
 權重 w 的算法與前節相同， B(p,r) 則以半徑r限制了搜索區域，最後將 Bm(i,f)的值以下式平均後，即可<br>
@@ -48,7 +48,7 @@ q 附近區塊的相似度，利用向量化概念計算歐基里德距離，再
 震盪也跟著下降，但在細節保存上，兩種算法無明顯的優劣。<br>
 
 區塊級實作的結果可參考下圖，colab環境執行約210s (區塊大小 7X7)，效率大大提升，且濾波效果良好
-![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Non%20Local%20Means/pic/patch%20base.jpg)
+![image]()
 ## 參考文獻:
 1. A. Buades, B. Coll, J.M. Morel, “A non local algorithm for image denoising”, IEEE Computer
 Vision and Pattern Recognition 2005, Vol 2, pp: 60-65, 2005.
