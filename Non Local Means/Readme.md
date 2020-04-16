@@ -36,7 +36,7 @@ q 附近區塊的相似度，利用向量化概念計算歐基里德距離，再
 ## 4.NLM 區塊級實作(Patchwise Implementation)
 像素級實作需對整張影像進行搜索，考慮影像大小為 N X N，實作上複雜度為 N^4 ，隨影像解析度的提高，<br>
 運行時間將大幅拉長。下圖 (256 X 256) 為以像素級實作的案例，降躁的效果非常顯著，然運算複雜度實在太<br>
-高，即便計算了一個晚上(約 8 小時)只完成一半，效率上難以使用。<br>
+高，即便計算了一個晚上(約 8 小時)也只完成一半，效率上難以使用。<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Non%20Local%20Means/pic/pixel%20base.jpg)<br>
 為了降低NLM的計算需求，該論文[1]同時提出了區塊級實作的概念，針對某區塊 B(p,f) 降躁後的影像，<br>
 可如下表示<br>
