@@ -11,7 +11,7 @@ Histogram eqaulization 是透過某種轉移函數的鏡射來達成，考慮原
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Histogram%20Equalization%20%26%20Specification/pic/10.jpg)<br>
 轉移函數為：<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Histogram%20Equalization%20%26%20Specification/pic/11.jpg)<br>
-因為機率密度必定大於或等於 0 ，又積分代表著函數在某區間內圍出的面積，隨著灰階數越高，面積一定越高或相等，所以滿足條件(a)。另外機率密度函數所圍成的總面積為 1 ，因此條件(b)也滿足。接著計算 dr/ds 並帶回第 1 個式子，可以得出 s 的機率密函數度為常數，等於總灰階值的倒數，這也間接證明兩張初始灰階分布不同的圖片，透過 Histogram Equalization 可以得到相同的結果， p(s) 與 p(r) 無關。當然這是理想性質，不過實際操作上，不同明暗的相片確實可以得到接近的結果,離散化的公式如下。下圖為實作的結果。<br>
+因為機率密度必定大於或等於 0 ，又積分代表著函數在某區間內圍出的面積，隨著灰階數越高，面積一定越高或相等，所以滿足條件(a)。另外機率密度函數所圍成的總面積為 1 ，因此條件(b)也滿足。接著計算 dr/ds 並帶回第 2 個式子，可以得出 s 的機率密函數度為常數，等於總灰階值的倒數，這也間接證明兩張初始灰階分布不同的圖片，透過 Histogram Equalization 得到的結果相同， p(s) 與 p(r) 無關。當然這是理想性質，不過實際操作上，不同明暗的相片確實可以得到相近的輸出，離散化的公式如下。下圖為實作的結果。<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Histogram%20Equalization%20%26%20Specification/pic/12.jpg)<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Histogram%20Equalization%20%26%20Specification/pic/13.jpg)<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Histogram%20Equalization%20%26%20Specification/pic/15.jpg)<br>
