@@ -45,18 +45,35 @@ for i in range(3):
 
 new_image = new_image.astype("uint8")
 
-#cv2.imshow("new image",new_image)
-#cv2.waitKey(0)
-plt.subplot(221)
+#calculate absolute difference between two image
+def abs_diff(image_1,image_2):
+    image_1 = image_1.astype("int")
+    image_2 = image_2.astype("int")
+    diff = abs(image_1 - image_2)
+    return diff.astype("uint8")
+
+diff = abs_diff(d_image,new_image)
+plt.subplot(2,2,1)
+plt.title("absolute difference")
+plt.xticks([]) #chancel x ticks
+plt.yticks([]) #chancel y ticks
+plt.imshow(diff,cmap="gray") #indicate color map
+
+plt.subplot(2,2,2)
 plt.title("destination image")
 plt.xticks([]) #chancel x ticks
 plt.yticks([]) #chancel y ticks
 plt.imshow(d_image,cmap="gray") #indicate color map
 
-plt.subplot(222)
-plt.title("image constructed by histogram specification ")
+plt.subplot(2,2,3)
+plt.title("source image ")
+plt.xticks([]) #chancel x ticks
+plt.yticks([]) #chancel y ticks
+plt.imshow(s_image,cmap="gray") #indicate color map
+
+plt.subplot(2,2,4)
+plt.title("histogram specification ")
 plt.xticks([]) #chancel x ticks
 plt.yticks([]) #chancel y ticks
 plt.imshow(new_image,cmap="gray") #indicate color map
-
 plt.show()
