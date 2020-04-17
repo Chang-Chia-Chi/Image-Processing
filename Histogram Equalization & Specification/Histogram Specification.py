@@ -29,19 +29,16 @@ tran_d_array = tran_d_array.astype("int") # transfer value type to int
 # compute corresponding zq 
 zq_array = np.zeros([256,3])
 for i in range(3):
-    for pos, tran_s_glev in enumerate(tran_s_array[:,i]):
-        zq = int(np.argmin(abs(tran_d_array[:,i]-tran_s_glev))) 
-        zq_array[pos,i] = zq
+    for pos, tran_s_glev in enumerate(tran_s_array[:,i]): # pos means grey level of r and tran_s_glev means grey level of s
+        zq = int(np.argmin(abs(tran_d_array[:,i]-tran_s_glev)))  # find zq make G(z) closest to s, the "index" of G(z) is the corresponding "zq"
+        zq_array[pos,i] = zq  # put zq in zq_array so the mapping between r and z is "index" of zq_array and value "zq"
 
-# construct new_image
-new_his_array = np.zeros([256,3])
+# construct new_image, mapping r to z
 for i in range(3):
     temp_image = new_image[:,:,i]
     for pos, new_glev in enumerate(zq_array[:,i]):
         temp_image[s_image[:,:,i] == pos] = new_glev
         new_image[:,:,i] = temp_image
-
-    new_his_array[:,i] = [np.sum(new_image[:,:,i] == g_lev) for g_lev in range(256)]
 
 new_image = new_image.astype("uint8")
 
