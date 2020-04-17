@@ -28,8 +28,8 @@ inverse mapping的計算步驟如下:<br>
 特定的內插方法，計算目標像素點的灰階。<br>
 4. 掃完所有目標像素點後，即可輸出旋轉後影像。<br>
 
-![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Rotation/pic/rotate%20about%20old%20original.jpg)
-
+![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Rotation/pic/rotate%20about%20old%20original.jpg)<br>
+![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Rotation/pic/Rotation.jpg)
 
 ## 參考文獻
 1. wekipedia:https://zh.wikipedia.org/wiki/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5
