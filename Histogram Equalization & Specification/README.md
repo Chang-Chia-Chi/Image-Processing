@@ -3,7 +3,7 @@
 ## 1. Histogram Equalization
 Histogram eqaulization 是影像處理中一個非常重要的工具，用於影像灰階的均勻化，對於曝光過高或過低，亮度集中(對比低)的影像非常有用。透過這種方法，影像灰階的全局分布變得較為平均，大幅提升局部的對比度，且不改變像素間的明暗關係，影像的細節就更好的被凸顯出來。<br>
 Histogram eqaulization 是透過某種轉移函數的鏡射來達成，考慮原影像的灰階 r 及均勻化影像的灰階 s ，兩者之間的關係可以下式表達：<br>
-![image]()<br>
+![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Histogram%20Equalization%20%26%20Specification/pic/8.jpg)<br>
 該轉移函數必須符合以下兩種特性：<br>
 (a). 為了確保轉移後的影像明暗關係不變，必須是單調上昇(Monotonic Increasing)函數。<br>
 (b). 轉換前後的影像總灰階數不變，s=T(r) 與 r 的 bits 數必須相等。<br>
