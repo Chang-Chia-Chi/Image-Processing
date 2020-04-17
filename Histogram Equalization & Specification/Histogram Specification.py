@@ -5,12 +5,12 @@ import cv2
 s_image = cv2.imread("C:/Users/USER/Desktop/Python/Image Processing/practice/Histogram Specification_source.jpg") # source image
 d_image = cv2.imread("C:/Users/USER/Desktop/Python/Image Processing/practice/Histogram Specification_destination.jpg") # destination image
 ix , iy = np.shape(s_image[:,:,0]) # image size
-new_image = np.zeros([ix,iy,3]) # create new image which will be construct by histogram specification using source image
+new_image = np.zeros([ix,iy,3]) # create new image which will be constructed by histogram specification using source image
 bits =8 
 L = 2**bits
 
 s_pdf_array = np.zeros([256,3]) # create possibility density function of s_image 
-d_pdf_array = np.zeros([256,3]) # create possibility density function of d_image histogram 
+d_pdf_array = np.zeros([256,3]) # create possibility density function of d_image
 tran_s_array = np.zeros([256,3]) # create transfer function of s_image
 tran_d_array = np.zeros([256,3]) # create transfer function of d_image
 
