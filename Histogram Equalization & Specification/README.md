@@ -18,8 +18,9 @@ Histogram eqaulization 是透過某種轉移函數的鏡射來達成，考慮原
 ![image]( 3-15)<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Histogram%20Equalization%20%26%20Specification/pic/Histogram%20Equalization.jpg)
 ## 2. Histogram Specification
-在某些情況下，均勻化的圖片仍無法觀察到想要的細節，此時可以使用 Histogram specification，顧名思義該方法是"指定"欲轉換的灰階分布 p(z) ，利用 histogram equalization 的結果與輸入圖片灰階分布無關之特性，p(r) 跟 p(z) 理論上經由轉換可得到相同的 p(s)，因此先將 r 及 z 映射到 s 後，藉由 s 與 r 及 z 之間的轉移函數，即可將 r 映射到 z。數學上的計算方式相同不再贅述，實作如下圖所示，左上角為結果與目標圖片 histogram的差異，左下角為來源圖片 r ，右上角為目標圖面 z ，右下角為利用來源圖片經過 specification 後求得的結果。
+在某些情況下，均勻化的圖片仍無法觀察到想要的細節，此時可以使用 Histogram specification，顧名思義該方法是"指定"欲轉換的灰階分布 p(z) ，利用 histogram equalization 的結果與輸入圖片灰階分布無關之特性，p(r) 跟 p(z) 理論上經由轉換可得到相同的 p(s)，因此先將 r 及 z 映射到 s 後，藉由 s 與 r 及 z 之間的轉移函數，即可將 r 映射到 z。數學上的計算方式相同不再贅述，實作如下圖所示，左上角為結果與目標圖片的差異(為凸顯不同，有顏色的部分為差異)，左下角為來源圖片 r ，右上角為目標圖面 z ，右下角為利用來源圖片經過 specification 後求得的結果。
 ![image]()<br>
 
-
+## 參考文獻
+1. Digital Image Processing 4th edition, Rafael C. Gonzalez, Richard E. Woods
 
