@@ -5,10 +5,9 @@ import matplotlib.pyplot as plt
 path = "C:/Users/USER/Desktop/Python/Image Processing/practice/practice pic2.jpg"
 s_image = plt.imread(path)
 
-def median_filter(s_image,f = 5):
+def median_filter(s_image,f = 7):
     ix , iy = np.shape(s_image[:,:,0]) # image size
     new_image = np.zeros([ix,iy,3]) # create new image
-    w_radi = f//2 # window radius
 
     #mirror padding
     def mir_padding(img,f):
@@ -33,7 +32,7 @@ def median_filter(s_image,f = 5):
     def median_kernel(block):
         seq = np.reshape(block,(f**2,3))
         seq = np.sort(seq,axis = 0)
-        mid_point = w_radi
+        mid_point = (f**2)//2
         median = seq[mid_point,:]
         return median
 
@@ -45,7 +44,7 @@ def median_filter(s_image,f = 5):
     
     return new_image
 
-new_image = median_filter(s_image,7)
+new_image = median_filter(s_image)
 new_image = new_image.astype("uint8")
 
 plt.subplot(221)
