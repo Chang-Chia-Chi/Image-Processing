@@ -7,7 +7,7 @@ Histogram eqaulization 是透過某種轉移函數的鏡射來達成，考慮原
 該轉移函數必須符合以下兩種特性：<br>
 (a). 為了確保轉移後的影像明暗關係不變，必須是單調上昇(Monotonic Increasing)函數。<br>
 (b). 轉換前後的影像總灰階數不變，s=T(r) 與 r 的 bits 數必須相等。<br>
-(a) 的最佳情況是 T(r) 為嚴格單調上昇函數，代表 r 與 s 之間能完全互相轉換，但影像處理是離散的世界，通常沒辦法達到嚴格遞增的要求。為了符合以上1. & 2.的條件，文獻中以機率密度函數的方式來處理，考慮已知圖片的灰階機率密度函數 p(r) 和均勻化後的灰階機率函數 p(s) 的關係如下：<br>
+(a) 的最佳情況是 T(r) 為嚴格單調上昇函數，代表 r 與 s 之間能完全互相轉換，但影像處理是離散的世界，通常沒辦法達到嚴格遞增的要求。為了符合(a) & (b)的條件，文獻中以機率密度函數的方式來處理，考慮已知圖片的灰階機率密度函數 p(r) 和均勻化後的灰階機率函數 p(s) 的關係如下：<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Histogram%20Equalization%20%26%20Specification/pic/10.jpg)<br>
 轉移函數為：<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Histogram%20Equalization%20%26%20Specification/pic/11.jpg)<br>
