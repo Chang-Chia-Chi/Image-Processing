@@ -1,4 +1,4 @@
-# Image Processing
+# Fourier Transform
 
 ## 簡介
-這個資料夾紀錄了學習影像處理，並以python自行刻出相關功能的歷程
+紀錄影像中傅立葉轉換的學習歷程
