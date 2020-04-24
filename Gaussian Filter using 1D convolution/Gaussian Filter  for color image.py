@@ -1,6 +1,6 @@
 import numpy as np
 
-def gaussian_filter(img,f,K,var):
+def gaussian_filter(img,f=5,K=1,var=1):
     """
     Gaussian Spatial Filter
     img is image to be applied
