@@ -7,7 +7,7 @@
 現考慮一時間(或空間)中的連續函數 f(x)，x 從正無窮大到負無窮大 ，若以dT的間隔取樣，可表示成連續函數與取樣序列的乘積如下式<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Fourier%20Transform%20in%20Image%20Processing/DFT/pic/4-27.jpg)<br>
 對上式做傅立葉轉換，由於捲與乘積在時域、頻域中為互換的運算，因此可表示如下<br>
-![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Fourier%20Transform%20in%20Image%20Processing/DFT/pic/4-31.jpg)
+![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Fourier%20Transform%20in%20Image%20Processing/DFT/pic/4-31.jpg)<br>
 由上式可以觀察到，取樣函數的傅立葉轉換，等於連續函數做傅立葉轉換後，以取樣頻率為週期無限複製 (連續函數的傅立葉轉換仍為連續函數)，現在我們直接對取樣函數進行傅立葉轉換，表示如下：<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Fourier%20Transform%20in%20Image%20Processing/DFT/pic/4-40.jpg)<br>
 要注意雖然fn為離散的資料點，上式的結果仍為連續函數，又我們知道取樣函數的傅立葉轉換為連續函數的無限複製，但我們僅需要一個週期的資訊，即可做反傅立葉轉換還原圖面，假設在1/dT的區間內，我們希望取M個sample點，則 μ 可替換成下式，帶入上式整理後可得：<br>
