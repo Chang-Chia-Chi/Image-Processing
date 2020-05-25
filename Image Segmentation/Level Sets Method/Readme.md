@@ -62,7 +62,7 @@ Level Sets Method，由字面來看，其實這是一種集合的概念，我們
 由上式可以發現，∇ϕ與切向量的內積為0，代表∇ϕ的物理意義即為某點影像的法向量，將之正規化並取負號確保一定指向曲線內部，則可表示為：<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Image%20Segmentation/Level%20Sets%20Method/pic/23.jpg)<br>
 曲線隨時間的變化即為速度，水平集的PDE可寫成：<br>
-https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Image%20Segmentation/Level%20Sets%20Method/pic/27.jpg<
+![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Image%20Segmentation/Level%20Sets%20Method/pic/27.jpg)<br>
 然到目前為止，我們一直在連續空間中，對曲線進行處理，但實際的影像是離散空間，為了更容易以離散形式表達，我們對上式進行處理：<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Image%20Segmentation/Level%20Sets%20Method/pic/24.jpg)<br>
 上式的物理意義為，空間中的曲面將持續擴張，每一時刻與level 0相交所圍成的曲線，即為該時刻下的水平集；當曲面無法再擴張時，當下的水平集即為目標影像。
