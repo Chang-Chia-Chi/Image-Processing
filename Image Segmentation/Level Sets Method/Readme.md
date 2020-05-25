@@ -52,16 +52,17 @@ Level Sets Method，由字面來看，其實這是一種集合的概念，我們
 若寫成集合的形式：<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Image%20Segmentation/Level%20Sets%20Method/pic/18.jpg)<br>
 若我們在 y=1 畫上一條線，那此時集合C為{-1, 1}，也就是在 level = 1所有符合該平面曲線的點 x。<br>
-同樣的概念，可以延伸到三維的曲面，考慮曲面與level 0平面所圍成的曲線，其通式為：<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Image%20Segmentation/Level%20Sets%20Method/pic/19.jpg)<br>
-也就是說，現在我們的目標為求出平面上的座標點，使得 ϕ(x,y)=0 ，所有符合的點集合，即為影像分割的目標 !<br>
+同樣的概念，可以延伸到三維的曲面，考慮曲面與level 0平面所圍成的曲線，其通式為：<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Image%20Segmentation/Level%20Sets%20Method/pic/20.jpg)<br>
-因為曲線的演進一定朝向法線方向，為了求出法向量，我們對 ϕ(x,y)=0 進行空間微分：<br>
+也就是說，現在我們的目標為求出平面上的座標點，使得 ϕ(x,y)=0 ，所有符合的點集合，即為影像分割的目標 !<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Image%20Segmentation/Level%20Sets%20Method/pic/21.jpg)<br>
-由上式可以發現，∇ϕ與切向量的內積為0，代表∇ϕ的物理意義即為某點影像的法向量，將之正規化並取負號確保一定指向曲線內部，則可表示為：<br>
+因為曲線的演進一定朝向法線方向，為了求出法向量，我們對 ϕ(x,y)=0 進行空間微分：<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Image%20Segmentation/Level%20Sets%20Method/pic/22.jpg)<br>
-曲線隨時間的變化即為速度，水平集的PDE可寫成：<br>
+由上式可以發現，∇ϕ與切向量的內積為0，代表∇ϕ的物理意義即為某點影像的法向量，將之正規化並取負號確保一定指向曲線內部，則可表示為：<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Image%20Segmentation/Level%20Sets%20Method/pic/23.jpg)<br>
+曲線隨時間的變化即為速度，水平集的PDE可寫成：<br>
+https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Image%20Segmentation/Level%20Sets%20Method/pic/27.jpg<
 然到目前為止，我們一直在連續空間中，對曲線進行處理，但實際的影像是離散空間，為了更容易以離散形式表達，我們對上式進行處理：<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Image%20Segmentation/Level%20Sets%20Method/pic/24.jpg)<br>
 上式的物理意義為，空間中的曲面將持續擴張，每一時刻與level 0相交所圍成的曲線，即為該時刻下的水平集；當曲面無法再擴張時，當下的水平集即為目標影像。
