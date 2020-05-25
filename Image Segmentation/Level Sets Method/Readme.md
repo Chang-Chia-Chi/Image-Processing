@@ -1,4 +1,9 @@
 # Level sets with Geodesic Active Contours
+## 實作結果
+![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Image%20Segmentation/Level%20Sets%20Method/pic/single.gif)<br>
+![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Image%20Segmentation/Level%20Sets%20Method/pic/shapes.gif)<br>
+![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Image%20Segmentation/Level%20Sets%20Method/pic/single_phi.jpg)<br>
+![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Image%20Segmentation/Level%20Sets%20Method/pic/multi_phi.jpg)<br>
 ## 1. Basic properties of curve (曲線基本性質)
 在講水平集方法之前，必須先談談曲線的基本性質，假設現有一函式：<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Image%20Segmentation/Level%20Sets%20Method/pic/1.jpg)<br>
@@ -71,12 +76,7 @@ Level Sets Method，由字面來看，其實這是一種集合的概念，我們
 上式為Level sets with Geodesic Active Contours的離散表達式。最後我們以中央差分法將 ∂ϕ/∂t 離散化：<br>
 ![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Image%20Segmentation/Level%20Sets%20Method/pic/26.jpg)<br>
 藉由水平集方法，我們不再需要顯式地追蹤曲線，而是建立平面，隱式地等待曲面擴張，避免一般active contour可能產生的問題。
-## 5.實作結果:
-下圖分別為偵測單個與多個物體，水平集隨時間的演進狀況，以及水平集的最終狀態。
-![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Image%20Segmentation/Level%20Sets%20Method/pic/single.gif)<br>
-![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Image%20Segmentation/Level%20Sets%20Method/pic/shapes.gif)<br>
-![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Image%20Segmentation/Level%20Sets%20Method/pic/single_phi.jpg)<br>
-![image](https://github.com/Chang-Chia-Chi/Image-Processing/blob/master/Image%20Segmentation/Level%20Sets%20Method/pic/multi_phi.jpg)<br>
+
 ## 參考文獻:
 1.Level Set Method Part II: Image Segmentationhttps://wiseodd.github.io/techblog/2016/11/20/levelset-segmentation/<br>
 2.https://www.youtube.com/watch?v=jrA-r4BOn0c<br>
