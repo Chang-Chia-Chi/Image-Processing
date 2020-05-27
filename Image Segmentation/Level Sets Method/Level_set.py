@@ -61,7 +61,6 @@ def Level_Set(image, v=1, dt=1, iter_n=170, edge_factor = 5, window = (15,15),si
 
     phi = phi_initialize(gauss_image)
     edgeIndi_grad = np.array(np.gradient(edge_indicator))
-    edgeIndi_grad_y, edgeIndi_grad_x = edgeIndi_grad[0], edgeIndi_grad[1]
 
     for i in range(iter_n):
         phi_grad = np.array(np.gradient(phi))
